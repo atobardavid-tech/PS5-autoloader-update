@@ -2,7 +2,7 @@
 
 
 
-Un payload en C diseñado para consolas PlayStation 5 que automatiza la búsqueda de una carpeta específica (`ps5\\\_autoloader`) en dispositivos de almacenamiento USB conectados (puertos `usb0` a `usb7`) y la copia de forma recursiva al directorio interno `/data/` de la consola.
+Un payload en C diseñado para consolas PlayStation 5 que automatiza la búsqueda de una carpeta específica (`ps5\\\\\\\_autoloader`) en dispositivos de almacenamiento USB conectados (puertos `usb0` a `usb7`) y la copia de forma recursiva al directorio interno `/data/` de la consola.
 
 
 
@@ -79,4 +79,14 @@ make clean \&\& make
 5\. Verificación:
 
 &#x20;  - Una vez finalizado el proceso, los archivos estarán disponibles dentro del directorio interno /data/ de la PS5.
+
+
+
+#### 🤖 AI-Assisted Development
+
+
+
+This project was developed with the assistance of \*\*\[Google Gemini](https://gemini.google.com/)\*\*.
+
+The source code was generated with the help of Gemini and subsequently reviewed and tested.
 
