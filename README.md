@@ -2,7 +2,7 @@
 
 
 
-Un payload en C diseñado para consolas PlayStation 5 que automatiza la búsqueda de una carpeta específica (`ps5\_autoloader`) en dispositivos de almacenamiento USB conectados (puertos `usb0` a `usb7`) y la copia de forma recursiva al directorio interno `/data/` de la consola.
+Un payload en C diseñado para consolas PlayStation 5 que automatiza la búsqueda de una carpeta específica (`ps5_autoloader`) en dispositivos de almacenamiento USB conectados (puertos `usb0` a `usb7`) y la copia de forma recursiva al directorio interno `/data/` de la consola.
 
 
 
@@ -50,7 +50,7 @@ make clean \&\& make
 
 &#x20;  - Formatea una unidad de almacenamiento USB en formato exFAT o FAT32.
 
-&#x20;  - En la raíz de la memoria USB, crea una carpeta con el nombre exacto: ps5\_autoloader.
+&#x20;  - En la raíz de la memoria USB, crea una carpeta con el nombre exacto: ps5_autoloader.
 
 &#x20;  - Coloca dentro de esta carpeta todos los archivos, carpetas o datos que desees transferir de manera automática a la consola.
 
