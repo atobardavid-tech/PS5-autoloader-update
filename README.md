@@ -1,8 +1,8 @@
-\# PS5 Autoloader Update Payload
+# **PS5 Autoloader Update Payload**
 
 
 
-Un payload en C diseñado para consolas PlayStation 5 que automatiza la búsqueda de una carpeta específica (`ps5\_autoloader`) en dispositivos de almacenamiento USB conectados (puertos `usb0` a `usb7`) y la copia de forma recursiva al directorio interno `/data/` de la consola.
+Un payload en C diseñado para consolas PlayStation 5 que automatiza la búsqueda de una carpeta específica (`ps5\\\_autoloader`) en dispositivos de almacenamiento USB conectados (puertos `usb0` a `usb7`) y la copia de forma recursiva al directorio interno `/data/` de la consola.
 
 
 
@@ -10,7 +10,7 @@ Incluye notificaciones emergentes nativas en pantalla para mantener al usuario i
 
 
 
-🚀 Características
+## **🚀 Características**
 
 Detección Automática de USB: Escanea los puntos de montaje de la consola (`/mnt/usb0` hasta `/mnt/usb7`) para localizar la carpeta de origen.
 
@@ -28,13 +28,13 @@ El aviso de éxito al finalizar la transferencia.
 
 
 
-🛠️ Requisitos de Compilación
+## **🛠️ Requisitos de Compilación**
 
 Este proyecto está diseñado para ser compilado utilizando el PS5 Payload SDK y la herramienta `prospero-clang` en un entorno Linux (como Ubuntu o WSL en Windows).
 
 
 
-Instrucciones de Compilación:
+## **Instrucciones de Compilación:**
 
 1\. Clona o ubica este repositorio dentro de los samples del SDK.
 
@@ -44,7 +44,7 @@ make clean \&\& make
 
 
 
-📖 Instrucciones de Uso:
+## **📖 Instrucciones de Uso:**
 
 1\. Preparar la Memoria USB:
 
