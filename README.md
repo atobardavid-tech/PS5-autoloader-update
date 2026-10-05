@@ -128,5 +128,3 @@ This project was developed with the assistance of \*\*\[Google Gemini](https://g
 
 The source code was generated with the help of Gemini and subsequently reviewed and tested.
 
-
-
