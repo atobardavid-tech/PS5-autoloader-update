@@ -6,7 +6,7 @@ Un payload en C diseñado para consolas PlayStation 5 que automatiza la búsqued
 
 
 
-Incluye notificaciones emergentes nativas en pantalla para mantener al usuario informado en todo momento sobre el progreso.
+Se detecta el idioma de la Consola (soporta los 31 idiomas de la consola), Incluye notificaciones emergentes nativas en pantalla (en el idioma de la consola) para mantener al usuario informado en todo momento sobre el progreso.
 
 
 
@@ -127,4 +127,6 @@ make clean \&\& make
 This project was developed with the assistance of \*\*\[Google Gemini](https://gemini.google.com/)\*\*.
 
 The source code was generated with the help of Gemini and subsequently reviewed and tested.
+
+
 

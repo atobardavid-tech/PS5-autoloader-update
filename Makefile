@@ -30,7 +30,7 @@ CFLAGS := -Wall -Werror -g
 all: $(ELF)
 
 $(ELF): main.c
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -L$(PS5_PAYLOAD_SDK)/sce_stubs -lSceSystemService -o $@ $^
 
 clean:
 	rm -f $(ELF)
