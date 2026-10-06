@@ -60,9 +60,35 @@ This project is designed to be compiled using the PS5 Payload SDK and the `prosp
 5\. Verification:
 \- Once the process is complete, the files will be available in the PS5's /data/ directory.
 
+## **📖 Inside Autoload.txt:**
+
+Place the payload name ps5_autoloader_updater.elf at the end of the list to avoid conflicts with 
+the .elf file loading process.
+
+	```bash
+   	!3000
+	shadowmountplus.elf
+	!3000
+	kstuff-1.13-fpkg-dr-test5.elf
+	!11000
+	pldmgr_v0.5.1.elf
+	!2000
+	pegasus_dl.elf
+	!2000
+	ps5_autoloader_updater.elf
+
+## **Acknowledgements**
+
+* Thanks to **Drakmor** and the **ShadowMountPlus** project for providing a reference for the PS5 system language 
+detection implementation used in this project. The original implementation was analyzed with the help of an AI assistant 
+to understand how the language detection worked and adapt the approach to this project.
+* Special thanks to the **[PS5 Payload SDK](https://github.com/ps5-payload-dev/sdk)** developers for providing the SDK used 
+to build this project.
+
+
 #### 🤖 AI-Assisted Development
 
-This project was developed with the assistance of \*\*\[Google Gemini](https://gemini.google.com/)\*\*.
-The source code was generated with the help of Gemini and subsequently reviewed and tested.
-ChatGPT by OpenAI, used for code assistance, debugging, and development guidance.
+This project was developed with the assistance of **[Google Gemini](https://gemini.google.com/)** and **ChatGPT by OpenAI**, 
+used for code generation, debugging, testing, and development guidance.
+
 
