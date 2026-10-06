@@ -1,4 +1,4 @@
-# **PS5 Autoloader Update Payload**
+# **PS5 Autoloader Updater Payload**
 
 A C-based payload designed for PlayStation 5 consoles that automates the search for a specific folder (`ps5_autoloader`) on connected USB storage devices 
 (`usb0` through `usb7` ports) and recursively copies it to the console's internal `/data/` directory.It detects the console's language (supporting all 31 system languages)
