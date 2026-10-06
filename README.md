@@ -1,130 +1,65 @@
 # **PS5 Autoloader Update Payload**
 
+A C-based payload designed for PlayStation 5 consoles that automates the search for a specific folder (`ps5_autoloader`) on connected USB storage devices 
+(`usb0` through `usb7` ports) and recursively copies it to the console's internal `/data/` directory.It detects the console's language (supporting all 31 system languages)
+ and includes native on-screen pop-up notifications (in the console's language) to keep the user informed at all times about the progress.
 
+## **🚀 Features**
 
-Un payload en C diseñado para consolas PlayStation 5 que automatiza la búsqueda de una carpeta específica (`ps5_autoloader`) en dispositivos de almacenamiento USB conectados (puertos `usb0` a `usb7`) y la copia de forma recursiva al directorio interno `/data/` de la consola.
+* **Automatic USB Detection:** Scans the console's mount points (`/mnt/usb0` through `/mnt/usb7`) to locate the source folder.
+* **Recursive Copy:** Capable of efficiently transferring entire folders, subdirectories, and files of any size.
+* **Visual Feedback (Notifications):** Uses `sceKernelSendNotificationRequest` to display native notices on the PS5 interface indicating:
+  * When the USB search starts.
+  * If the source directory is not found.
+  * When the copy process has begun.
+  * The success notice upon completion of the transfer.
 
+## **What's new in v1.00**
 
+* Added automatic detection of the PS5 system language.
+* Added notification translations for all 31 languages supported by the PS5 system.
+* Notifications are automatically displayed in the language configured on the console.
 
-Se detecta el idioma de la Consola (soporta los 31 idiomas de la consola), Incluye notificaciones emergentes nativas en pantalla (en el idioma de la consola) para mantener al usuario informado en todo momento sobre el progreso.
+## **What's new in v1.01**
 
+* Added file filtering: only `.elf` and `.txt` files are copied from the USB `ps5_autoloader` folder.
+* Added destination cleanup: the existing contents of `/data/ps5_autoloader` are removed before copying the new files.
+* This ensures that old files are not left behind when updating the contents of the destination folder.
 
+## **🛠️ Build Requirements**
 
-## **🚀 Características**
+This project is designed to be compiled using the PS5 Payload SDK and the `prospero-clang` tool in a Linux environment (such as Ubuntu or WSL on Windows).
 
-Detección Automática de USB: Escanea los puntos de montaje de la consola (`/mnt/usb0` hasta `/mnt/usb7`) para localizar la carpeta de origen.
+## **Build Instructions:**
 
-Copia Recursiva: Capaz de transferir carpetas completas, subdirectorios y archivos de cualquier tamaño de manera eficiente.
-
-Feedback Visual (Notificaciones): Utiliza `sceKernelSendNotificationRequest` para mostrar avisos nativos en la interfaz de la PS5 indicando:
-
-Cuando inicia la búsqueda en la USB.
-
-Si no se encuentra el directorio de origen.
-
-Cuando el proceso de copia ha comenzado.
-
-El aviso de éxito al finalizar la transferencia.
-
-
-
-## **🛠️ Requisitos de Compilación**
-
-Este proyecto está diseñado para ser compilado utilizando el PS5 Payload SDK y la herramienta `prospero-clang` en un entorno Linux (como Ubuntu o WSL en Windows).
-
-
-
-## **Instrucciones de Compilación:**
-
-1\. Clona o ubica este repositorio dentro de los samples del SDK.
-
-2\. Ejecuta el comando de compilación:
-
-make clean \&\& make
-
-
-
-## **📖 Instrucciones de Uso:**
-
-1\. Preparar la Memoria USB:
-
-&#x20;  - Formatea una unidad de almacenamiento USB en formato exFAT o FAT32.
-
-&#x20;  - En la raíz de la memoria USB, crea una carpeta con el nombre exacto: ps5\_autoloader.
-
-&#x20;  - Coloca dentro de esta carpeta todos los payloads y el archivo autoload.txt para transferir de manera automática a la consola.
-
-
-
-2\. Conectar la USB a la PS5:
-
-&#x20;  - Inserta la memoria USB en cualquiera de los puertos USB disponibles de la consola PlayStation 5.
-
-
-
-3\. Ejecutar el Payload:
-
-&#x20;  - Lanza o inyecta el payload compilado (.elf) utilizando tu método de carga o exploit favorito en la PS5.
-
-
-
-4\. Monitorear el Proceso:
-
-&#x20;  - El payload escaneará automáticamente los puertos desde usb0 hasta usb7.
-
-&#x20;  - Verás una serie de notificaciones emergentes nativas en la pantalla indicando el progreso.
-
-
-
-5\. Verificación:
-
-&#x20;  - Una vez finalizado el proceso, los archivos estarán disponibles dentro del directorio interno /data/ de la PS5.
-
-
+1. Clone or place this repository inside the SDK's samples.
+2. Run the compilation command:
+   ```bash
+   make clean && make
 
 ## **📖 Instructions for use:**
 
 1\. Prepare the USB Drive:
-
 \- Format a USB storage drive in exFAT or FAT32 format.
-
 \- In the root directory of the USB drive, create a folder with the exact name: ps5\_autoloader.
-
 \- Place all payloads and the autoload.txt file inside this folder to automatically transfer to the console.
 
-
-
 2\. Connect the USB Drive to the PS5:
-
 \- Insert the USB drive into any of the available USB ports on the PlayStation 5 console.
 
-
-
 3\. Run the Payload:
-
 \- Launch or inject the compiled payload (.elf) using your preferred loading method or exploit on the PS5.
 
-
-
 4\. Monitor the Process:
-
 \- The payload will automatically scan the ports from usb0 to usb7.
-
 \- You will see a series of native pop-up notifications on the screen indicating the progress.
 
-
-
 5\. Verification:
-
 \- Once the process is complete, the files will be available in the PS5's /data/ directory.
-
-
 
 #### 🤖 AI-Assisted Development
 
-
-
 This project was developed with the assistance of \*\*\[Google Gemini](https://gemini.google.com/)\*\*.
-
 The source code was generated with the help of Gemini and subsequently reviewed and tested.
+ChatGPT by OpenAI, used for code assistance, debugging, and development guidance.
 
