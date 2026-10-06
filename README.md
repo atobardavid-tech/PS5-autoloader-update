@@ -13,6 +13,8 @@ A C-based payload designed for PlayStation 5 consoles that automates the search 
   * If the source directory is not found.
   * When the copy process has begun.
   * The success notice upon completion of the transfer.
+* **Automatic Language Detection:** Uses `sceSystemServiceParamGetInt` to detect the PS5 system language and display notifications in the 
+corresponding language.
 
 ## **What's new in v1.00**
 
