@@ -51,7 +51,7 @@ This project is designed to be compiled using the PS5 Payload SDK and the `prosp
 
 3\. Run the Payload:
 \- Launch or inject the compiled payload (.elf) using your preferred loading method or exploit on the PS5.
-\- (Remember that the PS5 is listening on port 9021).
+\(Remember that the PS5 is listening on port 9021).
 
 4\. Monitor the Process:
 \- The payload will automatically scan the ports from usb0 to usb7.
