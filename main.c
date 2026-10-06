@@ -666,7 +666,7 @@ int copy_file(const char *src, const char *dest)
 
 /*
  * ============================================================
- * Recursive directory copy
+ * Recursive directory copy with extension filter only
  * ============================================================
  */
 
@@ -719,10 +719,17 @@ void copy_dir(const char *src_path, const char *dest_path)
 
             } else if (S_ISREG(st.st_mode)) {
 
-                copy_file(
-                    src_full,
-                    dest_full
-                );
+                /* 
+                 * Validar extensión (.elf o .txt) sin restricción de tamaño
+                 */
+                const char *ext = strrchr(entry->d_name, '.');
+                if (ext != NULL && (strcmp(ext, ".elf") == 0 || strcmp(ext, ".txt") == 0)) {
+
+                    copy_file(
+                        src_full,
+                        dest_full
+                    );
+                }
             }
         }
     }
@@ -730,6 +737,55 @@ void copy_dir(const char *src_path, const char *dest_path)
     closedir(dir);
 }
 
+/*
+ * ============================================================
+ * Clear destination directory
+ * ============================================================
+ */
+
+void clear_dir(const char *path)
+{
+    DIR *dir = opendir(path);
+
+    if (!dir)
+        return;
+
+    struct dirent *entry;
+
+    while ((entry = readdir(dir)) != NULL) {
+
+        if (strcmp(entry->d_name, ".") == 0 ||
+            strcmp(entry->d_name, "..") == 0)
+            continue;
+
+        char full_path[1024];
+
+        snprintf(
+            full_path,
+            sizeof(full_path),
+            "%s/%s",
+            path,
+            entry->d_name
+        );
+
+        struct stat st;
+
+        if (stat(full_path, &st) == 0) {
+
+            if (S_ISDIR(st.st_mode)) {
+
+                clear_dir(full_path);
+                rmdir(full_path);
+
+            } else if (S_ISREG(st.st_mode)) {
+
+                unlink(full_path);
+            }
+        }
+    }
+
+    closedir(dir);
+}
 
 /*
  * ============================================================
@@ -795,6 +851,8 @@ int main(int argc, char *argv[])
 
     const char *dest_dir =
         "/data/ps5_autoloader";
+
+    clear_dir(dest_dir);
 
     copy_dir(
         usb_path,
