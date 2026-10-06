@@ -78,7 +78,7 @@ the .elf file loading process.
 	ps5_autoloader_updater.elf
 ```
 >[!WARNING]
->**Note:**If you placed it inside the Autoload.txt file, remember that every time you jailbreak, the .elf file will run, 
+>If you placed it inside the Autoload.txt file, remember that every time you jailbreak, the .elf file will run, 
 >search the USB drive, and copy the files, giving a success notification. If you don't have a USB drive connected, 
 >or if you have one without the ps5_autoloader folder, it will give a failure notification.
 
