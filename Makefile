@@ -23,7 +23,7 @@ else
     $(error PS5_PAYLOAD_SDK is undefined)
 endif
 
-ELF := ps5_autoloader_update.elf
+ELF := ps5_autoloader_updater.elf
 
 CFLAGS := -Wall -Werror -g
 
