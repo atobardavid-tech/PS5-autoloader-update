@@ -76,6 +76,7 @@ the .elf file loading process.
 	pegasus_dl.elf
 	!2000
 	ps5_autoloader_updater.elf
+ ```
 
 ## **Acknowledgements**
 
