@@ -65,7 +65,7 @@ This project is designed to be compiled using the PS5 Payload SDK and the `prosp
 Place the payload name ps5_autoloader_updater.elf at the end of the list to avoid conflicts with 
 the .elf file loading process.
 
-      ```bash
+```bash
    	!3000
 	shadowmountplus.elf
 	!3000
@@ -76,7 +76,7 @@ the .elf file loading process.
 	pegasus_dl.elf
 	!2000
 	ps5_autoloader_updater.elf
- ```
+```
 
 ## **Acknowledgements**
 
