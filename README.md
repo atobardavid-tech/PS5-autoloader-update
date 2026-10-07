@@ -60,6 +60,12 @@ This project is designed to be compiled using the PS5 Payload SDK and the `prosp
 5\. Verification:
 \- Once the process is complete, the files will be available in the PS5's /data/ directory.
 
+<p align="center">
+  <img src="screenshots/English.jpeg" width="600">
+  <br>
+  <em>PS5 Notifications</em>
+</p>
+
 ## **📖 Inside Autoload.txt:**
 
 Place the payload name ps5_autoloader_updater.elf at the end of the list to avoid conflicts with 
